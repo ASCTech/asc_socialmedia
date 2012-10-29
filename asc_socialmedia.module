@@ -1,0 +1,141 @@
+<?php
+/**
+ * @file
+ * Module to supply field to add OPIC image.
+ */
+
+/**
+ * @defgroup opic
+ * Module to supple field to add OPIC image.
+ *
+ * And finally, our module defines the widet in
+ * opic_field_widget_info() and field_example_field_widget_form().
+ * The widget is the form element used to receive input from the user
+ * when the field is being populated.
+ *
+ * @see field_types
+ * @see field
+ */
+
+/**
+ * Implements hook_menu().
+ *
+ * Provides a simple user interface that tells the developer where to go.
+ */
+function opic_menu() {
+  $items['admin/config/asc_socialmedia'] = array(
+    'title' => 'ASC Social Media',
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('asc_socialmedia_form'),
+    'access arguments' => array('administer asc_socialmedia'),
+  );
+  return $items;
+}
+
+/*
+ * Implements hook_permission()
+ */
+function opic_permission() {
+  return array(
+    'administer asc_socialmedia' => array(
+      'title' => t('Administer ASC Social Media'),
+      'description' => t('Update sitewide social media settings.'),
+    ),
+  );
+}
+
+/**
+ * Admin form for opic.
+ */
+function asc_socialmedia_form($form_state) {
+  $form = array();
+  $sites = asc_socialmedia_get_services();
+
+  foreach ($sites as $site => $icon) {
+    $form[$site] = array(
+      '#title' => $site,
+      '#description' => "Please enter the URL for this organization's profile associated with " . $site,
+      '#type' => 'textfield',
+      '#default_value' => variable_get('asc_socialmedia_url_' . $site),
+    );
+
+    $form['submit'] = array(
+      '#type' => 'submit', 
+      '#value' => t('Save'),
+    );
+    return $form;
+  }
+}
+
+function asc_socialmedia_get_services() {
+  $sites = array(
+    'Blogger' => 'blogger.png',
+    'Facebook' => 'facebook.png',
+    'Flickr' => 'flickr.png',
+    'Give' => 'give.png',
+    'Google Plus' => 'googleplus.png',
+    'Issuu' => 'issuu.png',
+    'iTunes' => 'itunes.png',
+    'Linked In' => 'linkedin.png',
+    'Pinterest' => 'pinterest.png',
+    'rss' => 'rss.png',
+    'Tumblr' => 'tumblr.png',
+    'Twitter' => 'twitter.png',
+    'Vimeo' => 'vimeo.png',
+    'Wordpress' => 'wordpress.png',
+    'YouTube' => 'youtube.png',
+  );
+  return $sites;
+}
+
+/**
+ * Form submission
+*/
+function asc_socialmedia_form_submit(&$form, &$form_state){
+  $sites = asc_socialmedia_get_sites();
+  foreach ($sites as $site => $icon) {
+   variable_set('asc_socialmedia_url_' . $site, $form_state['values'][$site]);
+  }
+  drupal_set_message('Your settings have been saved.');
+}
+
+/*
+ * Implements hook_block_info
+ */
+
+function asc_socialmedia_block_info() {
+  $blocks['asc_socialmedia'] = array(
+    'info'        => 'ASC Social Media Icons',
+    'weight'      => '-10',
+    'region'      => 'footer_third',
+    'status'      => 'true',
+    'visibility'  => BLOCK_VISIBILITY_LISTED,
+    'cache'       => DRUPAL_CACHE_GLOBAL,
+  );
+}
+
+/*
+ * Implements hook_block_view
+ */
+
+function asc_socialmedia_block_view($delta = '') {
+  $block['subject'] = '';
+
+  $sites = asc_socialmedia_get_sites();
+
+  $image = theme_image(
+    array(
+      'path' => drupal_get_path('module', 'asc_socialmedia') . 'icons/' . $icon,
+      'alt' => $site . ' profile',
+      'title' => $site . ' profile',
+    )
+  );
+
+  foreach ($sites as $site => $icon) {
+    if (variable_get('asc_socialmedia_url_' . $site) = $url != '') {
+       $block['content'] .= '<a href="' . $url . '">' . $image . '</a>';
+    }
+  }
+}
+
