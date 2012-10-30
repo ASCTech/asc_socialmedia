@@ -1,11 +1,11 @@
 <?php
 /**
  * @file
- * Module to supply field to add OPIC image.
+ * Module to supply social media icons for ASC Sites.
  */
 
 /**
- * @defgroup opic
+ * @defgroup asc_socialmedia
  * Module to supple field to add OPIC image.
  *
  * And finally, our module defines the widet in
@@ -22,7 +22,7 @@
  *
  * Provides a simple user interface that tells the developer where to go.
  */
-function opic_menu() {
+function asc_socialmedia_menu() {
   $items['admin/config/asc_socialmedia'] = array(
     'title' => 'ASC Social Media',
     'type' => MENU_NORMAL_ITEM,
@@ -33,10 +33,17 @@ function opic_menu() {
   return $items;
 }
 
+/**
+ * Implements hook_init
+ */
+function asc_socialmedia_init() {
+  drupal_add_css(drupal_get_path('module', 'asc_socialmedia') . '/asc_socialmedia.css');
+}
+
 /*
  * Implements hook_permission()
  */
-function opic_permission() {
+function asc_socialmedia_permission() {
   return array(
     'administer asc_socialmedia' => array(
       'title' => t('Administer ASC Social Media'),
@@ -46,7 +53,7 @@ function opic_permission() {
 }
 
 /**
- * Admin form for opic.
+ * Admin form for asc socialmedia.
  */
 function asc_socialmedia_form($form_state) {
   $form = array();
@@ -59,43 +66,62 @@ function asc_socialmedia_form($form_state) {
       '#type' => 'textfield',
       '#default_value' => variable_get('asc_socialmedia_url_' . $site),
     );
-
-    $form['submit'] = array(
-      '#type' => 'submit', 
-      '#value' => t('Save'),
-    );
-    return $form;
   }
+
+  $form['submit'] = array(
+    '#type' => 'submit', 
+    '#value' => t('Save'),
+  );
+  return $form;
 }
 
 function asc_socialmedia_get_services() {
   $sites = array(
-    'Blogger' => 'blogger.png',
     'Facebook' => 'facebook.png',
+    'Twitter' => 'twitter.png',
+    'YouTube' => 'youtube.png',
+    'Blogger' => 'blogger.png',
     'Flickr' => 'flickr.png',
-    'Give' => 'give.png',
-    'Google Plus' => 'googleplus.png',
+    'Google_Plus' => 'googleplus.png',
     'Issuu' => 'issuu.png',
     'iTunes' => 'itunes.png',
     'Linked In' => 'linkedin.png',
     'Pinterest' => 'pinterest.png',
     'rss' => 'rss.png',
     'Tumblr' => 'tumblr.png',
-    'Twitter' => 'twitter.png',
     'Vimeo' => 'vimeo.png',
     'Wordpress' => 'wordpress.png',
-    'YouTube' => 'youtube.png',
+    'Give' => 'give.png',
   );
   return $sites;
+}
+
+function asc_socialmedia_contact_fields() {
+  $fields = array(
+    'Address_1',
+    'Address_2',
+    'City',
+    'State',
+    'Zip',
+    'Phone',
+    'Fax',
+    'Link_1_Text',
+    'Link_1_URL',
+    'Link_2_Text',
+    'Link_2_URL',
+    'Link_3_Text',
+    'Link_3_URL',
+  );
+  return $fields;
 }
 
 /**
  * Form submission
 */
 function asc_socialmedia_form_submit(&$form, &$form_state){
-  $sites = asc_socialmedia_get_sites();
-  foreach ($sites as $site => $icon) {
-   variable_set('asc_socialmedia_url_' . $site, $form_state['values'][$site]);
+  $sites = asc_socialmedia_get_services();
+  foreach ($sites as $key => $value) {
+   variable_set('asc_socialmedia_url_' . $key, $form_state['values'][$key]);
   }
   drupal_set_message('Your settings have been saved.');
 }
@@ -110,9 +136,9 @@ function asc_socialmedia_block_info() {
     'weight'      => '-10',
     'region'      => 'footer_third',
     'status'      => 'true',
-    'visibility'  => BLOCK_VISIBILITY_LISTED,
     'cache'       => DRUPAL_CACHE_GLOBAL,
   );
+  return $blocks;
 }
 
 /*
@@ -121,21 +147,27 @@ function asc_socialmedia_block_info() {
 
 function asc_socialmedia_block_view($delta = '') {
   $block['subject'] = '';
+  $block['content'] = '';
 
-  $sites = asc_socialmedia_get_sites();
+  $sites = asc_socialmedia_get_services();
 
-  $image = theme_image(
-    array(
-      'path' => drupal_get_path('module', 'asc_socialmedia') . 'icons/' . $icon,
-      'alt' => $site . ' profile',
-      'title' => $site . ' profile',
-    )
-  );
 
   foreach ($sites as $site => $icon) {
-    if (variable_get('asc_socialmedia_url_' . $site) = $url != '') {
-       $block['content'] .= '<a href="' . $url . '">' . $image . '</a>';
+    $url = variable_get('asc_socialmedia_url_' . $site);
+    if ($url != '') {
+      $image = theme_image(
+        array(
+          'path' => drupal_get_path('module', 'asc_socialmedia') . '/icons/' . $icon,
+          'alt' => $site . ' profile',
+          'title' => $site . ' profile',
+          'attributes' => '',
+        )
+      );
+      $block['content'] .= '<a href="' . $url . '">' . $image . '</a>';
     }
+
   }
+
+  return $block;
 }
 
