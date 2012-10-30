@@ -3,4 +3,4 @@ description = "ASC Social Media Block and Admin Form"
 core = "7.x"
 package = "ASC"
 version = "7.x.-1.x"
-files[] = opic.module
+files[] = asc_socialmedia.module
