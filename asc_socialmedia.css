@@ -2,3 +2,59 @@
   float: right;
   margin-left: 0.75em;
 }
+
+#asc-sharing-button {
+  padding: 0 3px;
+  margin-bottom: 5px;
+  border: 1px solid #333333;
+  width: 48px;
+}
+
+#asc-sharing-icons {
+  position: absolute;
+  width: 31px;
+  display: none;
+  background: #ffffff;
+  z-index: 2;
+  top: 24px;
+  border: 1px solid #333333;
+}
+
+#asc-sharing-wrapper {
+  position: relative;
+  float: right;
+}
+
+.asc-sharing-link {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+
+#asc-facebook-share {
+  background: url('sharing-icons.png') -1px -1px;
+}
+
+#asc-twitter-share {
+  background: url('sharing-icons.png') -1px -24px;
+}
+
+#asc-pinterest-share {
+  background: url('sharing-icons.png') -1px -48px;
+}
+
+#asc-tumblr-share {
+  background: url('sharing-icons.png') -1px -70px;
+}
+
+#asc-blogger-share {
+  background: url('sharing-icons.png') -1px -93px;
+}
+
+#asc-linkedin-share {
+  background: url('sharing-icons.png') -1px -116px;
+}
+
+#asc-googleplus-share {
+  background: url('sharing-icons.png') -1px -138px;
+}

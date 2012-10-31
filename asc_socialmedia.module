@@ -38,6 +38,7 @@ function asc_socialmedia_menu() {
  */
 function asc_socialmedia_init() {
   drupal_add_css(drupal_get_path('module', 'asc_socialmedia') . '/asc_socialmedia.css');
+  drupal_add_js(drupal_get_path('module', 'asc_socialmedia') . '/asc_socialmedia_sharing.js');
 }
 
 /*
@@ -138,6 +139,13 @@ function asc_socialmedia_block_info() {
     'status'      => 'true',
     'cache'       => DRUPAL_CACHE_GLOBAL,
   );
+  $blocks['asc_socialmedia_sharing'] = array(
+    'info'        => 'ASC Sharing Icons',
+    'weight'      => '-10',
+    'region'      => 'content',
+    'status'      => 'true',
+    'cache'       => DRUPAL_CACHE_GLOBAL,
+  );
   return $blocks;
 }
 
@@ -146,28 +154,49 @@ function asc_socialmedia_block_info() {
  */
 
 function asc_socialmedia_block_view($delta = '') {
-  $block['subject'] = '';
-  $block['content'] = '';
+  switch($delta){
+  case 'asc_socialmedia':
 
-  $sites = asc_socialmedia_get_services();
+    $block['subject'] = '';
+    $block['content'] = '';
 
+    $sites = asc_socialmedia_get_services();
 
-  foreach ($sites as $site => $icon) {
-    $url = variable_get('asc_socialmedia_url_' . $site);
-    if ($url != '') {
-      $image = theme_image(
-        array(
-          'path' => drupal_get_path('module', 'asc_socialmedia') . '/icons/' . $icon,
-          'alt' => $site . ' profile',
-          'title' => $site . ' profile',
-          'attributes' => '',
-        )
-      );
-      $block['content'] .= '<a href="' . $url . '">' . $image . '</a>';
+    foreach ($sites as $site => $icon) {
+      $url = variable_get('asc_socialmedia_url_' . $site);
+      if ($url != '') {
+        $image = theme_image(
+          array(
+            'path' => drupal_get_path('module', 'asc_socialmedia') . '/icons/' . $icon,
+            'alt' => $site . ' profile',
+            'title' => $site . ' profile',
+            'attributes' => '',
+          )
+        );
+        $block['content'] .= '<a href="' . $url . '">' . $image . '</a>';
+      }
+
     }
+    
+    break;
 
+  default:
+    $block['subject'] = '';
+    $block['content'] = theme('asc_socialmedia_sharing', '');
+
+    break;
   }
 
   return $block;
 }
 
+/*
+ * Implementation of hook_theme()
+ */
+function asc_socialmedia_theme() {
+  return array(
+    'asc_socialmedia_sharing' => array(
+      'template' => 'asc_socialmedia_sharing',
+    ),
+  );
+}
