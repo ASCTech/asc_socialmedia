@@ -1,5 +1,5 @@
 <div id="asc-sharing-wrapper">
-  <div id="asc-sharing-button">share <span id="plus">+</span></div>
+  <div id="asc-sharing-button">share <div id="plus">+</div></div>
   <div id="asc-sharing-icons">
   <a href="http://www.facebook.com/plugins/like.php?href=<?php print urlencode($_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]) ?>" alt="Share on Facebook" id="asc-facebook-share" class="asc-sharing-link" title="Share on Facebook" /></a>
   <a href="http://twitter.com/share?text=" alt="Share on Twitter" id="asc-twitter-share" class="asc-sharing-link" title="Share on Twitter" /></a>
