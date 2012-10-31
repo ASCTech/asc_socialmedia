@@ -141,10 +141,10 @@ function asc_socialmedia_block_info() {
   );
   $blocks['asc_socialmedia_sharing'] = array(
     'info'        => 'ASC Sharing Icons',
-    'weight'      => '-10',
+    'weight'      => '50',
     'region'      => 'content',
     'status'      => 'true',
-    'cache'       => DRUPAL_CACHE_GLOBAL,
+    'cache'       => DRUPAL_CACHE_PER_PAGE,
   );
   return $blocks;
 }
