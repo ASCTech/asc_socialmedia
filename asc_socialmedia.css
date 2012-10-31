@@ -30,7 +30,10 @@
   position: absolute;
   top: 0px;
   right: 0px;
-  width: 1.5em;
+  width: 16px;
+  padding-left: 6px;
+  background: #666666;
+  color: #ffffff;
 }
 
 .asc-sharing-link {
