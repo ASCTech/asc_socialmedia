@@ -1,13 +1,13 @@
 .block-asc-socialmedia img {
-  float: right;
-  margin-left: 0.75em;
 }
 
 #asc-sharing-button {
   padding: 0 3px;
   margin-bottom: 5px;
   border: 1px solid #333333;
-  width: 4em;
+  width: 4.25em;
+  float: left;
+  position: relative;
 }
 
 #asc-sharing-icons {
@@ -25,6 +25,9 @@
   float: right;
 }
 
+#asc-sharing-dropdown {
+}
+
 #asc-sharing-wrapper #plus {
   display: block;
   position: absolute;
@@ -32,7 +35,7 @@
   right: 0px;
   width: 16px;
   padding-left: 6px;
-  height: 24px;
+  height: 23px;
   background: #666666;
   color: #ffffff;
 }
@@ -69,4 +72,30 @@
 
 #asc-googleplus-share {
   background: url('sharing-icons.png') -1px -138px;
+}
+
+#asc-email-share {
+  background: url('share_icons/email.png');
+}
+
+#asc-sharing-sharprint {
+  float: left;
+}
+
+#asc-print-share {
+  background: url('share_icons/print.png') no-repeat;
+  width: 28px;
+  display: block;
+  height: 25px;
+  float: left;
+  margin-left: 10px;
+}
+
+#asc-mail-share {
+  background: url('share_icons/email.png') no-repeat;
+  width: 20px;
+  display: block;
+  height: 25px;
+  float: left;
+  margin-left: 10px;
 }
