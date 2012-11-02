@@ -182,7 +182,13 @@ function asc_socialmedia_block_view($delta = '') {
 
   default:
     $block['subject'] = '';
-    $block['content'] = theme('asc_socialmedia_sharing', '');
+    $vars = array(
+      'url' => 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'],
+      'title' => drupal_get_title(),
+      'picture' => '',
+      'description' => '',
+    );
+    $block['content'] = theme('asc_socialmedia_sharing', $vars);
 
     break;
   }
