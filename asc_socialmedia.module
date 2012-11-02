@@ -183,8 +183,8 @@ function asc_socialmedia_block_view($delta = '') {
   default:
     $block['subject'] = '';
     $vars = array(
-      'url' => 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'],
-      'title' => drupal_get_title(),
+      'url' => urlencode('http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']),
+      'title' => urlencode(drupal_get_title()),
       'picture' => '',
       'description' => '',
     );
