@@ -13,6 +13,6 @@
 </div>
 <div id="asc-sharing-sharprint">
   <a id="asc-print-share" href="javascript:if(window.print)window.print()"></a>
-  <a id="asc-mail-share" href="mailto:?subject=Shared link from <?php print $site_name ?>&body=<?php print $variables['title'] . ' ' . $variables['url'] ?>"></a>
+  <a id="asc-mail-share" href="mailto:?subject=Shared link from <?php print variable_get('site_name') ?>&body=<?php print $variables['title'] . ' ' . $variables['url'] ?>"></a>
 </div>
 </div>
