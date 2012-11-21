@@ -21,9 +21,16 @@
   border: 1px solid #333333;
 }
 
+#asc-sharing-icons a {
+  font-size: 0;
+}
+
 #asc-sharing-wrapper {
   position: relative;
   float: right;
+}
+
+#asc-sharing-wrapper {
 }
 
 #asc-sharing-dropdown {
@@ -90,6 +97,7 @@
   height: 25px;
   float: left;
   margin-left: 10px;
+  font-size: 0;
 }
 
 #asc-mail-share {
@@ -99,4 +107,5 @@
   height: 25px;
   float: left;
   margin-left: 10px;
+  font-size: 0;
 }
