@@ -4,7 +4,6 @@
   <div id="asc-sharing-icons">
   <a href="http://www.facebook.com/sharer.php?u=<?php print $variables['url'] ?>&t=<?php print $variables['title'] ?>" id="asc-facebook-share" class="asc-sharing-link" title="Share on Facebook" target="_blank" />Share on Facebook</a>
   <a href="http://twitter.com/share?url=<?php print $variables['url'] ?>&text=<?php print $variables['title'] ?>" id="asc-twitter-share" class="asc-sharing-link" title="Share on Twitter" target="_blank"/>Share on Twitter</a>
-  <!-- <a href="http://pinterest.com/pin/create/button/?url=<?php print $variables['url'] ?>&media=<?php print $vars['picture'] ?>&description=<?php print $vars['title'] ?>" title="Pin It" id="asc-pinterest-share" class="asc-sharing-link" target="_blank"></a> --> 
   <a href="http://www.tumblr.com/share/link?url=<?php print $variables['url'] ?>&name=<?php print $variables['title'] ?>&description=<?php print $variables['description'] ?>" id="asc-tumblr-share" class="asc-sharing-link" title="Share on Tumblr" target="_blank">Share on Tumblr</a>
   <!-- <a href="" id="asc-blogger-share" class="asc-sharing-link" title="Share on Blogger" target="_blank"></a> -->
   <a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php print $variables['url'] ?>&title=<?php print $variables['title'] ?>&summary=<?php print $variables['description'] ?>" id="asc-linkedin-share" class="asc-sharing-link" title="Share on LinkedIn" target="_blank">Share on LinkedIn</a>
