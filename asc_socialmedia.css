@@ -4,6 +4,9 @@
 
 .block-asc-socialmedia a {
   padding-left: 10px;
+}
+
+.block-asc-socialmedia a img {
   padding-bottom: 10px;
 }
 
