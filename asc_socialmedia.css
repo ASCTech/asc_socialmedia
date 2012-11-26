@@ -2,6 +2,11 @@
   float: right;
 }
 
+.block-asc-socialmedia a {
+  padding-right: 10px;
+}
+
+
 #asc-sharing-button {
   padding: 0 3px;
   margin-bottom: 5px;
