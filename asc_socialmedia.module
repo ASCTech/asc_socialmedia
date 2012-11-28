@@ -173,7 +173,7 @@ function asc_socialmedia_block_view($delta = '') {
             'attributes' => '',
           )
         );
-        $block['content'] .= '<a href="' . $url . '" id="">' . $image . '</a>';
+        $block['content'] .= '<a href="' . $url . '">' . $image . '</a>|';
       }
 
     }
