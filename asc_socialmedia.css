@@ -15,6 +15,7 @@
   width: 4.25em;
   float: left;
   position: relative;
+  font-size: 13px;
 }
 
 #asc-sharing-icons {
@@ -26,6 +27,7 @@
   top: 24px;
   border: 1px solid #333333;
   font-size: 0;
+  line-height: 0;
 }
 
 #asc-sharing-icons a {
