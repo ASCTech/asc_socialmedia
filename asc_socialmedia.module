@@ -86,7 +86,7 @@ function asc_socialmedia_get_services() {
     'Google_Plus' => 'googleplus.png',
     'Issuu' => 'issuu.png',
     'iTunes' => 'itunes.png',
-    'Linked In' => 'linkedin.png',
+    'Linked_In' => 'linkedin.png',
     'Pinterest' => 'pinterest.png',
     'rss' => 'rss.png',
     'Tumblr' => 'tumblr.png',
@@ -95,25 +95,6 @@ function asc_socialmedia_get_services() {
     'Give' => 'give.png',
   );
   return $sites;
-}
-
-function asc_socialmedia_contact_fields() {
-  $fields = array(
-    'Address_1',
-    'Address_2',
-    'City',
-    'State',
-    'Zip',
-    'Phone',
-    'Fax',
-    'Link_1_Text',
-    'Link_1_URL',
-    'Link_2_Text',
-    'Link_2_URL',
-    'Link_3_Text',
-    'Link_3_URL',
-  );
-  return $fields;
 }
 
 /**
