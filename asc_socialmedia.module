@@ -13,8 +13,6 @@
  * The widget is the form element used to receive input from the user
  * when the field is being populated.
  *
- * @see field_types
- * @see field
  */
 
 /**
@@ -34,7 +32,7 @@ function asc_socialmedia_menu() {
 }
 
 /**
- * Implements hook_init
+ * Implements hook_init()
  */
 function asc_socialmedia_init() {
   drupal_add_css(drupal_get_path('module', 'asc_socialmedia') . '/asc_socialmedia.css');
@@ -54,11 +52,11 @@ function asc_socialmedia_permission() {
 }
 
 /**
- * Admin form for asc socialmedia.
+ * Implements hook_form().
  */
 function asc_socialmedia_form($form_state) {
   $form = array();
-  $sites = asc_socialmedia_get_services();
+  $sites = _asc_socialmedia_get_services();
 
   foreach ($sites as $site => $icon) {
     $form[$site] = array(
@@ -76,7 +74,7 @@ function asc_socialmedia_form($form_state) {
   return $form;
 }
 
-function asc_socialmedia_get_services() {
+function _asc_socialmedia_get_services() {
   $sites = array(
     'Facebook' => 'facebook.png',
     'Twitter' => 'twitter.png',
@@ -98,10 +96,10 @@ function asc_socialmedia_get_services() {
 }
 
 /**
- * Form submission
-*/
+ * Implements hook_form_submit().
+ */
 function asc_socialmedia_form_submit(&$form, &$form_state){
-  $sites = asc_socialmedia_get_services();
+  $sites = _asc_socialmedia_get_services();
   foreach ($sites as $key => $value) {
    variable_set('asc_socialmedia_url_' . $key, $form_state['values'][$key]);
   }
@@ -109,7 +107,7 @@ function asc_socialmedia_form_submit(&$form, &$form_state){
 }
 
 /*
- * Implements hook_block_info
+ * Implements hook_block_info().
  */
 
 function asc_socialmedia_block_info() {
@@ -131,7 +129,7 @@ function asc_socialmedia_block_info() {
 }
 
 /*
- * Implements hook_block_view
+ * Implements hook_block_view().
  */
 
 function asc_socialmedia_block_view($delta = '') {
@@ -141,7 +139,7 @@ function asc_socialmedia_block_view($delta = '') {
     $block['subject'] = '';
     $block['content'] = '';
 
-    $sites = asc_socialmedia_get_services();
+    $sites = _asc_socialmedia_get_services();
 
     foreach ($sites as $site => $icon) {
       $url = variable_get('asc_socialmedia_url_' . $site);
