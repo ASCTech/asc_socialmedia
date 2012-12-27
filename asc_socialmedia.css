@@ -4,7 +4,7 @@
 }
 
 .block-asc-socialmedia a img {
-  margin: 0px 0px 10px 10px;
+  margin: 0 0 10px 10px;
   float: right;
 }
 
@@ -31,25 +31,16 @@
   line-height: 0;
 }
 
-#asc-sharing-icons a {
-}
-
 #asc-sharing-wrapper {
   position: relative;
   float: right;
 }
 
-#asc-sharing-wrapper {
-}
-
-#asc-sharing-dropdown {
-}
-
 #asc-sharing-wrapper #plus {
   display: block;
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   width: 16px;
   padding-left: 9px;
   height: 23px;
