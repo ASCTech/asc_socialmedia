@@ -62,8 +62,8 @@ function asc_socialmedia_form($form_state) {
 
   foreach ($sites as $site => $icon) {
     $form[$site] = array(
-      '#title' => $site,
-      '#description' => "Please enter the URL for this organization's profile associated with " . $site,
+      '#title' => check_plain($site),
+      '#description' => "Please enter the URL for this organization's profile associated with " . check_plain($site)),
       '#type' => 'textfield',
       '#default_value' => variable_get('asc_socialmedia_url_' . $site),
     );
@@ -164,7 +164,7 @@ function asc_socialmedia_block_view($delta = '') {
   default:
     $block['subject'] = '';
     $vars = array(
-      'url' => urlencode('http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']),
+      'url' => urlencode('http://' . $_SERVER['SERVER_NAME'] . request_uri()),
       'title' => urlencode(drupal_get_title()),
       'picture' => '',
       'description' => '',
