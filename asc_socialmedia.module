@@ -63,7 +63,7 @@ function asc_socialmedia_form($form_state) {
   foreach ($sites as $site => $icon) {
     $form[$site] = array(
       '#title' => check_plain($site),
-      '#description' => "Please enter the URL for this organization's profile associated with " . check_plain($site)),
+      '#description' => "Please enter the URL for this organization's profile associated with " . check_plain($site),
       '#type' => 'textfield',
       '#default_value' => variable_get('asc_socialmedia_url_' . $site),
     );
