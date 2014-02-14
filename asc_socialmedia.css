@@ -1,4 +1,4 @@
-.block-asc-socialmedia{float:right;}
+.block-asc-socialmedia{float:right; padding-bottom: 2em;}
 .block-asc-socialmedia a img{margin:0px 0px 10px 10px; float:right;}
 #asc-sharing-icons{float:left; font-size:0; line-height:0;}
 #asc-sharing-icons a{display:inline-block;}
