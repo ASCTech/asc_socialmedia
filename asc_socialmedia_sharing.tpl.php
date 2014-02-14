@@ -1,5 +1,5 @@
 <div id="asc-sharing-wrapper">
-	share this pageshare page
+	<span class="share-text">share this pageshare page</span>
 	<div id="asc-sharing-icons">
 		<a href="http://www.facebook.com/sharer.php?u=<?php print $variables['url'] ?>&t=<?php print $variables['title'] ?>" id="asc-facebook-share" class="asc-sharing-link" title="Share on Facebook" />Share on Facebook</a>|
 		<a href="http://twitter.com/share?url=<?php print $variables['url'] ?>&text=<?php print $variables['title'] ?>" id="asc-twitter-share" class="asc-sharing-link" title="Share on Twitter"/>Share on Twitter</a>|
