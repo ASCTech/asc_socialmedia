@@ -20,18 +20,13 @@
 }
 
 #asc-sharing-icons {
-  position: absolute;
-  width: 31px;
-  display: none;
-  background: #ffffff;
-  z-index: 2;
-  top: 24px;
-  border: 1px solid #333333;
+	float: right;
   font-size: 0;
   line-height: 0;
 }
 
 #asc-sharing-icons a {
+	display: inline-block;
 }
 
 #asc-sharing-wrapper {
@@ -40,6 +35,7 @@
 }
 
 #asc-sharing-wrapper {
+	color: #666;
 }
 
 #asc-sharing-dropdown {
@@ -96,7 +92,7 @@
 }
 
 #asc-sharing-sharprint {
-  float: left;
+  float: right;
 }
 
 #asc-print-share {
