@@ -25,11 +25,11 @@
 #asc-sharing-icons a,
 #asc-sharing-sharprint a{background: url('sharing-sprite.png') no-repeat top left;}
 
-#asc-facebook-share{ background-position: 0 -23px; width: 17px; height: 17px; } 
-#asc-googleplus-share{ background-position: 0 -50px; width: 17px; height: 17px; } 
-#asc-linkedin-share{ background-position: 0 -77px; width: 17px; height: 17px; } 
-#asc-tumblr-share{ background-position: 0 -139px; width: 17px; height: 17px; } 
-#asc-twitter-share{ background-position: 0 -166px; width: 17px; height: 17px; } 
+#asc-sharing-icons #asc-facebook-share{ background-position: 0 -23px; width: 17px; height: 17px; } 
+#asc-sharing-icons #asc-googleplus-share{ background-position: 0 -50px; width: 17px; height: 17px; } 
+#asc-sharing-icons #asc-linkedin-share{ background-position: 0 -77px; width: 17px; height: 17px; } 
+#asc-sharing-icons #asc-tumblr-share{ background-position: 0 -139px; width: 17px; height: 17px; } 
+#asc-sharing-icons #asc-twitter-share{ background-position: 0 -166px; width: 17px; height: 17px; } 
 
-#sprite-email{ background-position: 0 0; width: 20px; height: 13px; } 
-#sprite-print{ background-position: 0 -104px; width: 27px; height: 25px; } 
+#asc-sharing-sharprint #sprite-email{ background-position: 0 0; width: 20px; height: 13px; } 
+#asc-sharing-sharprint #sprite-print{ background-position: 0 -104px; width: 27px; height: 25px; } 
