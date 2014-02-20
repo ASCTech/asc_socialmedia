@@ -13,7 +13,7 @@
 /* image rules */
 
 #asc-sharing-icons a{background: url('sharing-sprite.png') no-repeat top left;}
-#asc-sharing-sharprint a{background: url('sharing-sprite.png') no-repeat top left; display:block; height:25px; float:left; margin-left:10px; font-size:0;}
+#asc-sharing-sharprint a{background: url('sharing-sprite.png') no-repeat top left; display:block; height:25px; width: 25px; float:left; margin-left:10px; font-size:0;}
 
 #asc-sharing-icons #asc-facebook-share{ background-position: 0 -23px; } 
 #asc-sharing-icons #asc-googleplus-share{ background-position: 0 -50px; } 
