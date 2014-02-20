@@ -11,25 +11,15 @@
 
 
 /* image rules */
-/*#asc-facebook-share{background:url('sharing-icons.png') -1px -1px;}
-#asc-twitter-share{background:url('sharing-icons.png') -1px -24px;}
-#asc-pinterest-share{background:url('sharing-icons.png') -1px -48px;}
-#asc-tumblr-share{background:url('sharing-icons.png') -1px -70px;}
-#asc-blogger-share{background:url('sharing-icons.png') -1px -93px;}
-#asc-linkedin-share{background:url('sharing-icons.png') -1px -116px;}
-#asc-googleplus-share{background:url('sharing-icons.png') -1px -138px;}
-#asc-email-share{background:url('share_icons/email.png');}
-#asc-print-share{background:url('share_icons/print.png') no-repeat; width:28px; display:block; height:25px; float:left; margin-left:10px; font-size:0;}
-#asc-mail-share{background:url('share_icons/email.png') no-repeat; width:20px; display:block; height:25px; float:left; margin-left:10px; font-size:0;}*/
 
 #asc-sharing-icons a{background: url('sharing-sprite.png') no-repeat top left;}
 #asc-sharing-sharprint a{background: url('sharing-sprite.png') no-repeat top left; display:block; height:25px; float:left; margin-left:10px; font-size:0;}
 
-#asc-sharing-icons #asc-facebook-share{ background-position: 0 -23px; width: 17px; height: 17px; } 
-#asc-sharing-icons #asc-googleplus-share{ background-position: 0 -50px; width: 17px; height: 17px; } 
-#asc-sharing-icons #asc-linkedin-share{ background-position: 0 -77px; width: 17px; height: 17px; } 
-#asc-sharing-icons #asc-tumblr-share{ background-position: 0 -139px; width: 17px; height: 17px; } 
-#asc-sharing-icons #asc-twitter-share{ background-position: 0 -166px; width: 17px; height: 17px; } 
+#asc-sharing-icons #asc-facebook-share{ background-position: 0 -23px; } 
+#asc-sharing-icons #asc-googleplus-share{ background-position: 0 -50px; } 
+#asc-sharing-icons #asc-linkedin-share{ background-position: 0 -77px; } 
+#asc-sharing-icons #asc-tumblr-share{ background-position: 0 -139px; } 
+#asc-sharing-icons #asc-twitter-share{ background-position: 0 -166px; } 
 
-#asc-sharing-sharprint #asc-mail-share{ background-position: 0 0; width: 20px; height: 13px; } 
-#asc-sharing-sharprint #asc-print-share{ background-position: 0 -104px; width: 27px; height: 25px; }
+#asc-sharing-sharprint #asc-mail-share{ background-position: 0 0; } 
+#asc-sharing-sharprint #asc-print-share{ background-position: 0 -104px; width: 27px; }
