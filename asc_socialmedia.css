@@ -15,11 +15,11 @@
 #asc-sharing-icons a{background: url('sharing-sprite.png') no-repeat top left;}
 #asc-sharing-sharprint a{background: url('sharing-sprite.png') no-repeat top left; display:block; height:25px; width: 25px; float:left; margin-left:10px; font-size:0;}
 
-#asc-sharing-icons #asc-facebook-share{ background-position: 0 -23px; } 
-#asc-sharing-icons #asc-googleplus-share{ background-position: 0 -50px; } 
-#asc-sharing-icons #asc-linkedin-share{ background-position: 0 -77px; } 
-#asc-sharing-icons #asc-tumblr-share{ background-position: 0 -139px; } 
-#asc-sharing-icons #asc-twitter-share{ background-position: 0 -166px; } 
+#asc-sharing-icons #asc-facebook-share{ background-position: 4px -19px; } 
+#asc-sharing-icons #asc-googleplus-share{ background-position: 4px -46px; } 
+#asc-sharing-icons #asc-linkedin-share{ background-position: 4px -73px; } 
+#asc-sharing-icons #asc-tumblr-share{ background-position: 4px -135px; } 
+#asc-sharing-icons #asc-twitter-share{ background-position: 4px -162px; } 
 
-#asc-sharing-sharprint #asc-mail-share{ background-position: 0 0; } 
+#asc-sharing-sharprint #asc-mail-share{ background-position: 2px 6px; } 
 #asc-sharing-sharprint #asc-print-share{ background-position: 0 -104px; width: 27px; }
