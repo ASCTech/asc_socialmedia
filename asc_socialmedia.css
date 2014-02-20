@@ -31,5 +31,5 @@
 #asc-sharing-icons #asc-tumblr-share{ background-position: 0 -139px; width: 17px; height: 17px; } 
 #asc-sharing-icons #asc-twitter-share{ background-position: 0 -166px; width: 17px; height: 17px; } 
 
-#asc-sharing-sharprint #sprite-email{ background-position: 0 0; width: 20px; height: 13px; } 
-#asc-sharing-sharprint #sprite-print{ background-position: 0 -104px; width: 27px; height: 25px; } 
+#asc-sharing-sharprint #asc-mail-share{ background-position: 0 0; width: 20px; height: 13px; } 
+#asc-sharing-sharprint #asc-print-share{ background-position: 0 -104px; width: 27px; height: 25px; }
