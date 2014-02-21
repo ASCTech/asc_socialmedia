@@ -9,7 +9,6 @@
 .asc-sharing-link{width:25px; height:25px; display:block;}
 #asc-sharing-sharprint{float:left;}
 
-.share-text{display: inline-block; height: 25px; line-height: 25px;}
 /* image rules */
 #asc-sharing-icons a{background: url('sharing-sprite.png') no-repeat top left;}
 #asc-sharing-sharprint a{background: url('sharing-sprite.png') no-repeat top left; display:block; height:25px; width: 25px; float:left; margin-left:5px; font-size:0;}
