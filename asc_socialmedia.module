@@ -93,6 +93,7 @@ function asc_socialmedia_get_services() {
     'Vimeo' => 'vimeo.png',
     'Wordpress' => 'wordpress.png',
     'Give' => 'give.png',
+    'Instagram' => 'instagram.png',
   );
   return $sites;
 }
