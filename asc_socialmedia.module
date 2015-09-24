@@ -70,7 +70,7 @@ function asc_socialmedia_form($form_state) {
   }
 
   $form['submit'] = array(
-    '#type' => 'submit', 
+    '#type' => 'submit',
     '#value' => t('Save'),
   );
   return $form;
@@ -147,19 +147,33 @@ function asc_socialmedia_block_view($delta = '') {
     foreach ($sites as $site => $icon) {
       $url = variable_get('asc_socialmedia_url_' . $site);
       if ($url != '') {
-        $image = theme_image(
-          array(
-            'path' => drupal_get_path('module', 'asc_socialmedia') . '/icons/' . $icon,
-            'alt' => $site . ' profile',
-            'title' => $site . ' profile',
-            'attributes' => '',
-          )
-        );
+        if ($site == "Give") {
+          $site_name = variable_get('site_name');
+          $image = theme_image(
+            array(
+              'path' => drupal_get_path('module', 'asc_socialmedia') . '/icons/' . $icon,
+              'alt' => "Give to $site",
+              'title' => "Give to $site",
+              'attributes' => '',
+            )
+          );
+        }
+        else {
+          $image = theme_image(
+            array(
+              'path' => drupal_get_path('module', 'asc_socialmedia') . '/icons/' . $icon,
+              'alt' => $site . ' profile',
+              'title' => $site . ' profile',
+              'attributes' => '',
+            )
+          );
+        }
+
         $block['content'] .= '<a href="' . $url . '">' . $image . '</a>|';
       }
 
     }
-    
+
     break;
 
   default:
